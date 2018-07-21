@@ -1,0 +1,8 @@
+README.md
+setup.py
+webtoons/__init__.py
+webtoons.egg-info/PKG-INFO
+webtoons.egg-info/SOURCES.txt
+webtoons.egg-info/dependency_links.txt
+webtoons.egg-info/requires.txt
+webtoons.egg-info/top_level.txt

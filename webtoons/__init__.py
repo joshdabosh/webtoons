@@ -103,16 +103,13 @@ class Webtoons:
 
 
 # returns the top 10 comics of the day
-    def top10_of_day(self, toShow):
+    def top10_of_day(self):
         released=self.new_releases(12)
         toReturn = []
         for i in range(0,10):
             toReturn.append(str(i+1) + ' '+released[i])
-
-        if toShow > len(toReturn):
-            return "Error: too many comics were requested to show, and not enough comics exist!"
-
-        return toReturn[:toShow]
+            
+        return toReturn
 
 
 # returns the most popular comics. optional param toShow for how many comics to return

@@ -1,11 +1,10 @@
 <center>
-  <h1>Webtoons site scraper</h1>
-  <h3>For Python3</h3>
+  <h1>Webtoons site scraper, for Python 3</h1>
 </center>
 Note: this module was based off of [this](https://github.com/Galactus03/webtoons)
 repository for Python2. Big thanks to @Galactus03!
 
-I added more resiliency to the functions, and fixed quite some bugs.
+I added more resiliency to the functions, transferred all code to Python3 syntax, fixed quite some bugs, and made it return results.
 
 \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 
@@ -42,7 +41,12 @@ Then run
 to install webtoons (this module!)
 
 <h3>**ALTERNATE INSTALL DIRECTIONS**</h3>
-Alternatively, you can install this module by cloning the repository and installing it:
+As mentioned above, you need to install libxml2-dev and libxslt-dev:
+```
+sudo apt-get install libxml2-dev libxslt-dev
+```
+
+You can then clone the repository and install it:
 ```
 git clone https://github.com/joshdabosh/webtoons.git
 cd webtoons

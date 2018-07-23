@@ -6,7 +6,7 @@ repository for Python2. Big thanks to @Galactus03!
 
 I added more resiliency to the functions, transferred all code to Python3 syntax, fixed quite some bugs, and made it return results.
 
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+----
 
 This module has these functions:
 
@@ -28,7 +28,9 @@ Returns /<toShow/> amount of the most popular webtoons.
 `top_in_genre(g, toShow)` -> takes in parameters g and toShow.
 Returns /<toShow/> amount of the most popular comics in genre /<g/>.
 
-<h3>**INSTALLATION DIRECTIONS**</h3>
+----
+
+<h3>INSTALLATION DIRECTIONS (pip)</h3>
 Since lxml, a required module, needs the development packages of both libxml2 and libxslt. If you don't have them already, isntall them with:"
 ```
 sudo apt-get install libxml2-dev libxslt-dev
@@ -40,7 +42,9 @@ Then run
 `pip3 install webtoons`
 to install webtoons (this module!)
 
-<h3>**ALTERNATE INSTALL DIRECTIONS**</h3>
+
+
+<h3>ALTERNATE INSTALL DIRECTIONS (cloning)</h3>
 As mentioned above, you need to install libxml2-dev and libxslt-dev:
 ```
 sudo apt-get install libxml2-dev libxslt-dev
@@ -53,7 +57,9 @@ cd webtoons
 sudo python3 setup.py install
 ```
 
-<h3>**USE**</h3>
+----
+
+<h3>USE</h3>
 To use, simply start an instance of webtoons and run a few functions!
 ```
 import webtoons
@@ -61,5 +67,7 @@ wt = webtoons.Webtoons()
 print(wt.top10_of_day())
 # returns the top 10 comics of the day
 ```
+
+----
 
 Comments or suggestions are welcome!

@@ -48,7 +48,7 @@ class Webtoons:
         url = "http://www.webtoons.com/en/top?rankingGenre=ALL&target="+sex+str(age)
         page_data=requests.get(url)
         if page_data.status_code==200:
-            soup=bs(page_data.content,"lxml")
+            soup=bs(page_data.content,"html.parser")
         else:
             return page_data.status_code," :  error"
         data=soup.find_all("h3",class_="blind")
@@ -68,7 +68,7 @@ class Webtoons:
         search_url="http://www.webtoons.com/search?keyword="+author
         search_data=requests.get(search_url)
         if search_data.status_code==200:
-            soup=bs(search_data.content,'lxml')
+            soup=bs(search_data.content,'html.parser')
         else:
             return search_data.status_code, ": error"
         search_result=soup.find("ul",class_="card_lst")
@@ -85,7 +85,7 @@ class Webtoons:
     def new_releases(self, toShow):
         day = time.strftime("%A")
         day_sched= requests.get("http://www.webtoons.com/en/dailySchedule")
-        soup=bs(day_sched.content,'lxml')
+        soup=bs(day_sched.content,'html.parser')
         
         x = "daily_section _list_"+day.upper()
         ls=soup.find("div",{'class':x})
@@ -114,7 +114,7 @@ class Webtoons:
 # returns the most popular comics. optional param toShow for how many comics to return
     def best_rated(self, toShow=5):
         page=requests.get('http://www.webtoons.com/en/top')
-        soup=bs(page.content,'lxml')
+        soup=bs(page.content,'html.parser')
         ls=soup.find(class_="ranking_lst top")
         subjall=ls.find_all(class_="subj")
 
@@ -136,7 +136,7 @@ class Webtoons:
 # returns the most popular comics in a specific genre. optional param toShow for how many comics to return
     def top_in_genre(self,g,toShow=5):
         page=requests.get('http://www.webtoons.com/en/genre')
-        soup=bs(page.content,'lxml')
+        soup=bs(page.content,'html.parser')
 
         g = "_".join(g.lower().split())
         gen = "_"+g

@@ -11,22 +11,22 @@ I added more resiliency to the functions, transferred all code to Python3 syntax
 This module has these functions:
 
 `popularity_age(age, sex, toShow)` -> takes in parameters age, sex, and toShow. If not given, random.choice chooses age and sex, and toShow defaults to integer 5.
-Returns toShow amount of the most popular webtoons based on age and sex.
+Returns list of toShow amount of the most popular webtoons based on age and sex.
 
 `author_comics(author)` -> takes in parameter author.
-Returns all comics that the specified author has created.
+Returns list of all comics that the specified author has created.
 
 `new_releases(toShow)` -> takes in parameter toShow.
-Returns toShow amount of webtoons that were updated today
+Returns list of toShow amount of webtoons that were updated today
 
 `top10_of_day()` -> takes in no parameters.
-Returns the top 10 most popular comics today.
+Returns list of the top 10 most popular comics today.
 
 `best_rated(toShow)` -> takes in parameter toShow.
-Returns toShow amount of the most popular webtoons.
+Returns list of toShow amount of the most popular webtoons.
 
 `top_in_genre(g, toShow)` -> takes in parameters g and toShow.
-Returns toShow amount of the most popular comics in genre g.
+Returns list of toShow amount of the most popular comics in genre g.
 
 ----
 

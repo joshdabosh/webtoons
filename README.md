@@ -31,27 +31,19 @@ Returns toShow amount of the most popular comics in genre g.
 ----
 
 <h3>INSTALLATION DIRECTIONS (pip)</h3>
-Since lxml, a required module, needs the development packages of both libxml2 and libxslt. If you don't have them already, install them with:"
-
-    sudo apt-get install libxml2-dev libxslt-dev
-    sudo pip3 install lxml
-
-
 // I CAN'T GET TWINE TO UPLOAD MY MODULE TO PYPI YET SO PIP3 INSTALL WON'T WORK - USE ALTERNATE INSTALLATION DIRECTIONS
 
-Then run
+To install, simply run
 
     pip3 install webtoons
 
-to install webtoons (this module!)
-
+to install webtoons (this module!), requests, and BeautifulSoup4, which are dependencies.
 
 
 <h3>ALTERNATE INSTALLATION DIRECTIONS (cloning)</h3>
-As mentioned above, you need to install libxml2-dev and libxslt-dev in order to install lxml:
+Requests, BeautifulSoup4 are required dependencies. Install them with:
 
-    sudo apt-get install libxml2-dev libxslt-dev
-    sudo pip3 install lxml
+    sudo pip3 install requests, beautifulsoup4
 
 You can then clone the repository and install it:
 

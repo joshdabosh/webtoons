@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup as bs
-import lxml
 import requests
 import time
 import random
@@ -8,7 +7,7 @@ class Webtoons:
     def __init__(self):
         # creates a list of the available genres, for later use
         page=requests.get("https://www.webtoons.com/en/challenge/list?genreTab=ALL&sortOrder=")
-        soup=bs(page.content, 'lxml')
+        soup=bs(page.content, 'html.parser')
 
         ultag = soup.find("ul", {"class":"snb challenge"})
         ultag2 = soup.find("ul", {"class":"ly_lst_genre"})

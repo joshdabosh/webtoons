@@ -5,29 +5,35 @@ import random
 
 class Webtoons:
     def __init__(self):
-        # creates a list of the available genres, for later use
-        page=requests.get("https://www.webtoons.com/en/challenge/list?genreTab=ALL&sortOrder=")
-        soup=bs(page.content, 'html.parser')
+        self.genres = self.getGenres()
+        
 
-        ultag = soup.find("ul", {"class":"snb challenge"})
-        ultag2 = soup.find("ul", {"class":"ly_lst_genre"})
-        self.litags = []
+# generates a list of webtoon genres
+def getGenres(self):
+    page=requests.get("https://www.webtoons.com/en/challenge/list?genreTab=ALL&sortOrder=")
+    soup=bs(page.content, 'html.parser')
 
-        for self.litag in ultag.find_all("li"):
-            self.litags.append(self.litag.find('a').text)
+    ultag = soup.find("ul", {"class":"snb challenge"})
+    ultag2 = soup.find("ul", {"class":"ly_lst_genre"})
+    litags = []
+
+    for litag in ultag.find_all("li"):
+        litags.append(litag.find('a').text)
 
         ultag = soup.find("ul", {"id": "othersGenreLayer"})
 
-        for self.litag in ultag2.find_all("li"):
-            self.litags.append(self.litag.find('a').text)
+        for litag in ultag2.find_all("li"):
+            litags.append(litag.find('a').text)
 
-        self.litags = list(map(lambda x : x.rstrip(), self.litags))
-        self.litags = list(map((lambda x : ''.join(["_"+i for i in x.split()])), self.litags))
-        self.litags = list(map(lambda x : x.lower(), self.litags))
+        litags = list(map(lambda x : x.rstrip(), litags))
+        litags = list(map((lambda x : ''.join(["_"+i for i in x.split()])), litags))
+        litags = list(map(lambda x : x.lower(), litags))
         
-        self.litags.remove("_home")
-        self.litags.remove("_others")
+        litags.remove("_home")
+        litags.remove("_others")
         
+    return litags
+
 
 # returns popular comics based on age and sex specified. if not specified python's random module chooses
     def popularity_age(self,age=random.choice([10,20,30]),sex=random.choice(["M", "F"]), toShow=5):
@@ -143,7 +149,7 @@ class Webtoons:
 
         genre = "g"+gen
 
-        if gen not in self.litags:
+        if gen not in self.genres:
             return "Genre not found. Try again"
         
         ls=soup.find(class_="sub_title "+genre)

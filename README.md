@@ -31,21 +31,15 @@ Returns list of toShow amount of the most popular comics in genre g.
 ----
 
 <h3>INSTALLATION DIRECTIONS (pip)</h3>
-// I CAN'T GET TWINE TO UPLOAD MY MODULE TO PYPI YET SO PIP3 INSTALL WON'T WORK - USE ALTERNATE INSTALLATION DIRECTIONS
-
 To install, simply run
 
-    pip3 install webtoons
+    sudo pip3 install webtoons
 
 to install webtoons (this module!), requests, and BeautifulSoup4, which are dependencies.
 
 
 <h3>ALTERNATE INSTALLATION DIRECTIONS (cloning)</h3>
-Requests, BeautifulSoup4 are required dependencies. Install them with:
-
-    sudo pip3 install requests, beautifulsoup4
-
-You can then clone the repository and install it:
+Clone the repository and install it:
 
     git clone https://github.com/joshdabosh/webtoons.git
     cd webtoons
@@ -59,7 +53,7 @@ To use, simply start an instance of webtoons and run a few functions!
     import webtoons
     wt = webtoons.Webtoons()
     print(wt.top10_of_day())
-    # returns the top 10 comics of the day
+    # prints the top 10 comics of the day
 
 
 ----

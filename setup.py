@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="webtoons",
-    version="0.1",
+    version="0.1.1",
     author="Joshua Wang",
     author_email="jwanggt@gmail.com",
     description="A small package for getting Webtoon comics for Python3.",

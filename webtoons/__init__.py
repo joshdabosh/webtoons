@@ -1,3 +1,6 @@
+# Copyright Joshua Wang 2018
+# See LICENSE in GitHub repository for more information
+
 from bs4 import BeautifulSoup as bs
 import requests
 import time

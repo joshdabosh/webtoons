@@ -12,30 +12,30 @@ class Webtoons:
         
 
 # generates a list of webtoon genres
-def getGenres(self):
-    page=requests.get("https://www.webtoons.com/en/challenge/list?genreTab=ALL&sortOrder=")
-    soup=bs(page.content, 'html.parser')
+    def getGenres(self):
+        page=requests.get("https://www.webtoons.com/en/challenge/list?genreTab=ALL&sortOrder=")
+        soup=bs(page.content, 'html.parser')
 
-    ultag = soup.find("ul", {"class":"snb challenge"})
-    ultag2 = soup.find("ul", {"class":"ly_lst_genre"})
-    litags = []
+        ultag = soup.find("ul", {"class":"snb challenge"})
+        ultag2 = soup.find("ul", {"class":"ly_lst_genre"})
+        litags = []
 
-    for litag in ultag.find_all("li"):
-        litags.append(litag.find('a').text)
-
-        ultag = soup.find("ul", {"id": "othersGenreLayer"})
-
-        for litag in ultag2.find_all("li"):
+        for litag in ultag.find_all("li"):
             litags.append(litag.find('a').text)
 
-        litags = list(map(lambda x : x.rstrip(), litags))
-        litags = list(map((lambda x : ''.join(["_"+i for i in x.split()])), litags))
-        litags = list(map(lambda x : x.lower(), litags))
-        
-        litags.remove("_home")
-        litags.remove("_others")
-        
-    return litags
+            ultag = soup.find("ul", {"id": "othersGenreLayer"})
+
+            for litag in ultag2.find_all("li"):
+                litags.append(litag.find('a').text)
+
+            litags = list(map(lambda x : x.rstrip(), litags))
+            litags = list(map((lambda x : ''.join(["_"+i for i in x.split()])), litags))
+            litags = list(map(lambda x : x.lower(), litags))
+            
+            litags.remove("_home")
+            litags.remove("_others")
+            
+        return litags
 
 
 # returns popular comics based on age and sex specified. if not specified python's random module chooses

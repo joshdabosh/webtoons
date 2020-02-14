@@ -1,7 +1,8 @@
 <center>
   <h1>Webtoons site scraper, for Python 3</h1>
 </center>
-Note: this module was based off of (this)[https://github.com/Galactus03/webtoons]
+
+Note: this module was based off of [this](https://github.com/Galactus03/webtoons)
 repository for Python2. Big thanks to @Galactus03!
 
 I added more resiliency to the functions, transferred all code to Python3 syntax, fixed quite some bugs, and made it return results.
